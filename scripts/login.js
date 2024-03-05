@@ -18,3 +18,13 @@ function login() {
         }, 3000);
     };
 };
+
+function showSignUp() {
+    document.getElementById("signup-button").style.display = "block";
+    document.getElementById("login-button").style.display = "none";
+};
+
+function showLogin() {
+    document.getElementById("signup-button").style.display = "none";
+    document.getElementById("login-button").style.display = "block";
+};
