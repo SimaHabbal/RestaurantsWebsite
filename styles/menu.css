@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration-style: none;
+}
+
+.bg-image {
+  width: 100%;
+}
+.hero {
+  height: 100vh;
+  background-repeat: no-repeat;
+}
