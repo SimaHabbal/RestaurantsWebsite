@@ -28,3 +28,17 @@ function showLogin() {
     document.getElementById("signup-button").style.display = "none";
     document.getElementById("login-button").style.display = "block";
 };
+
+function signUp() {
+    showSignUp();
+    if (username in userCredentials) {
+        message.innerHTML = "Username already exists. Please login.";
+        setTimeout(() => {
+            message.innerHTML = "";
+        }, 3000);
+        showLogin();
+    } else {
+        userCredentials[username] = password;
+        localStorage.setItem('userCredentials', JSON.stringify(userCredentials));
+    }; 
+};
