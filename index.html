@@ -6,3 +6,32 @@
     <title>Login</title>
     <link rel="stylesheet" href="./styles/login.css" />
 </head>
+<body>
+    <div class="split left">
+        <div class="centered">
+          <img src="./images/table-restaurant.png" alt="people dining">
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="centered">
+            <h1>WELCOME!</h1>
+            <label for="username">Username:</label>
+            <input type="text" id="username" class="input-field" /> <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" class="input-field" /><br>
+            <div class="buttons">
+
+                    <button onclick="login()" class="button login-button" id="login-button">Login</button>
+
+
+                    <button onclick="signUp()" class="button signup-button" id="signup-button">Sign Up</button>
+
+            </div>
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <script src="./scripts/login.js"></script>
+</body>
+</html>
