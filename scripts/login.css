@@ -31,3 +31,19 @@
 .centered h1 {
     margin-left: 70px;
 }
+
+.button {
+    border: none;
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 20%;
+}
+
+.signup-button {
+    display: none;
+    margin-left: 150px;
+}
+
+.login-button {
+    margin-left: 80px;
+}
