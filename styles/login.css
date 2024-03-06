@@ -87,7 +87,7 @@
 
 }
 
-@media (max-width: 420px) {
+@media (max-width: 569px) {
     .right {
         right: 0;
         left: 0;
