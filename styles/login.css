@@ -1,8 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    
-}
+  }
+  
 
 .split {
     height: 100%;
@@ -11,7 +11,7 @@
     z-index: 1;
     top: 0;
     overflow-x: hidden;
-    padding-top: 20px;
+    overflow-y: hidden;
 }
 
 .left {
