@@ -37,6 +37,7 @@
 .centered h1 {
     margin-left: 70px;
     font-size: 36px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
@@ -45,8 +46,11 @@
     padding: 15px 20px;
     margin: 20px;
     border-radius: 20%;
-    background-color: rgba(247, 160, 0, 0.842);
+    background-color: chocolate;
     color: white;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
 }
 
 .signup-button {
@@ -60,6 +64,7 @@
 
 .label {
     font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .input-field {
