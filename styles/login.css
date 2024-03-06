@@ -51,4 +51,24 @@
 .input-field {
     padding: 15px 20px;
     margin: 20px;
+    border-radius: 7%;
+}
+
+@media (max-width: 650px) {
+    .left {
+        display: none;
+    }
+
+    .right {
+        right: 25%;
+        left: 25%;
+    }
+
+    .login-button {
+        margin-left: 0;
+    }
+
+    .centered h1 {
+        margin-left: 0;
+    }
 }
