@@ -33,6 +33,7 @@ function showSignUp() {
 function showLogin() {
     document.getElementById("signup-button").style.display = "none";
     document.getElementById("login-button").style.display = "block";
+    document.getElementById("login-button").style.margin = "auto";
 };
 
 function signUp() {
