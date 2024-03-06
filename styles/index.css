@@ -1,0 +1,25 @@
+body{
+    margin-left: 7%;
+    margin-right:7%;
+    background-image: url('/assets/pizzabg\ \(2\).jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    text-align: center;
+
+}
+
+.herotxt{
+    font-size:70px;
+    padding-top: 17%;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.btn{
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    border: 1px solid white;
+    font-family: 'Times New Roman', Times, serif;
+}
