@@ -1,4 +1,3 @@
-//let userCredentials = {"admin": "admin123"};
 let message = document.getElementById("message")
 
 function login() {
@@ -34,7 +33,6 @@ function showSignUp() {
 function showLogin() {
     document.getElementById("signup-button").style.display = "none";
     document.getElementById("login-button").style.display = "block";
-    document.getElementById("login-button").style.marginLeft = "100px";
 };
 
 function signUp() {
