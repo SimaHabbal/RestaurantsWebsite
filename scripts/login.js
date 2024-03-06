@@ -1,4 +1,4 @@
-let userCredentials = {"admin": "admin123"};
+//let userCredentials = {"admin": "admin123"};
 let message = document.getElementById("message")
 
 function login() {
@@ -7,8 +7,8 @@ function login() {
 
     if (username=="admin" && password=="admin123") {
         window.location.href = "../RestaurantsWebsite/admin.html"
-    } else if (username in userCredentials ) {
-        if (userCredentials[username] === password) {
+    } else if (localStorage.getItem(username) !== null ) {
+        if (localStorage.getItem(username) === password) {
             window.location.href = "../RestaurantsWebsite/allResto.html"
         } else {
             message.innerHTML = "Incorrect Username/Password"
@@ -34,6 +34,7 @@ function showSignUp() {
 function showLogin() {
     document.getElementById("signup-button").style.display = "none";
     document.getElementById("login-button").style.display = "block";
+    document.getElementById("login-button").style.marginLeft = "100px";
 };
 
 function signUp() {
@@ -42,7 +43,7 @@ function signUp() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    if (username in userCredentials) {
+    if (localStorage.getItem(username) !== null) {
         message.innerHTML = "Username already exists. Please login.";
         setTimeout(() => {
             message.innerHTML = "";
@@ -51,8 +52,7 @@ function signUp() {
         document.getElementById("username").value = ""
         document.getElementById("password").value = ""
     } else {
-        userCredentials[username] = password;
-        localStorage.setItem('userCredentials', JSON.stringify(userCredentials));
+        localStorage.setItem(username, password);
         showLogin()
         document.getElementById("username").value = ""
         document.getElementById("password").value = ""
