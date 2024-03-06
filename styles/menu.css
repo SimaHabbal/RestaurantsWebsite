@@ -1,13 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Spline+Sans:wght@400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   text-decoration-style: none;
 }
 
-.bg-image {
+body {
+  font-family: "Spline Sans", sans-serif;
+  color: #777;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: #222;
+}
+
+a {
+  color: #222;
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+a:hover {
+  color: #f58d17;
+}
+
+img {
   width: 100%;
 }
-.hero {
-  height: 100vh;
-  background-repeat: no-repeat;
+
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
+
+.shadow-on-hover {
+  transition: all 0.3s;
+}
+
+.shadow-on-hover:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Btn */
+.btn {
+  border-radius: 0;
+  padding: 14px 38px;
+}
+
+.btn-brand {
+  color: #fff;
+  font-weight: 500;
+  border-color: #f58d17;
+  background-color: #f58d17;
+}
+
+.btn-brand:hover {
+  border-color: #d37810;
+  background-color: #d37810;
+  color: #fff;
+}
+
+.bg-cover {
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Slider */
+.slide-1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./../assets/menu-page/ef185765345271.5af175d9a165b.jpg);
+}
+
+.slide-2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(./../assets/menu-page/af033b54d5ecf3b1bb04e6db61ec7e54-removebg-preview.png);
+}
+
+#heroSlider h6::after,
+#heroSlider h6::before {
+  content: " ";
+  width: 40px;
+  height: 4px;
+  background-color: #ffffff;
+  display: inline-block;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 40px;
+  height: 70px;
+  margin: auto;
+}
+
+/* Navbar */
+.navbar-nav .nav-link.active {
+  color: #f58d17;
+}
+
+/* About */
+#about .divider {
+  width: 60px;
+  height: 2px;
+  display: block;
+  background-color: #f58d17;
+}
+
+.intro-text {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro-text p {
+  max-width: 500px;
+  margin: 16px auto 0 auto;
+}
+
+/* Menu */
