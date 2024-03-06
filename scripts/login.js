@@ -20,6 +20,8 @@ function login() {
             message.innerHTML = "";
         }, 3000);
     };
+    username = "";
+    password = "";
 };
 
 function showSignUp() {
