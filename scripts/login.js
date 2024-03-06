@@ -53,5 +53,8 @@ function signUp() {
     } else {
         userCredentials[username] = password;
         localStorage.setItem('userCredentials', JSON.stringify(userCredentials));
+        showLogin()
+        document.getElementById("username").value = ""
+        document.getElementById("password").value = ""
     }; 
 };
