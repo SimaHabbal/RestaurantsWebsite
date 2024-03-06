@@ -36,7 +36,7 @@
 
 .centered h1 {
     margin-left: 70px;
-    font-size: 50px;
+    font-size: 36px;
 }
 
 
@@ -56,6 +56,10 @@
 
 .login-button {
     margin-left: 80px;
+}
+
+.label {
+    font-size: 18px;
 }
 
 .input-field {
