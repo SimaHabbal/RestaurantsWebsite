@@ -80,3 +80,11 @@
 
 }
 
+@media (max-width: 420px) {
+    .right {
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+}
+
