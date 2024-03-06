@@ -2,7 +2,7 @@ let users = JSON.parse(localStorage.getItem('users')) || [];
 function loadDataFromLocalStorage() {
   restaurants = JSON.parse(localStorage.getItem('restaurants')) || [];
 }
-
+let plates = [];
 function addUser() { 
     let name = document.getElementById("uNameInput").value.trim(); 
     let email = document.getElementById("uEmailInput").value.trim(); 
@@ -68,10 +68,10 @@ function addRestaurant() {
     let restaurantName = document.getElementById("restaurantName").value;
     let restaurantDescription = document.getElementById("restaurantDescription").value;
     let restaurantImage = document.getElementById("restaurantImage").value;
-    let plates = [];
+    plates = [];
 
     let plateDivs = document.querySelectorAll(".plate");
-    plateDivs.forEach(function(plateDiv) {
+    plateDivs.forEach((plateDiv,index) => {
         let plateName = plateDiv.querySelector('input[name="plateName"]').value;
         let platePrice = plateDiv.querySelector('input[name="platePrice"]').value;
 
@@ -103,6 +103,7 @@ function addRestaurant() {
     document.getElementById("addRestaurantForm").reset();
 }
 
+
 function deleteRestaurant(index) {
     restaurants.splice(index, 1);
     
@@ -115,7 +116,7 @@ function displayRestaurantDetails() {
     let tableBody = document.getElementById("restaurantTableBody");
     tableBody.innerHTML = "";
 
-    restaurants.forEach(function(restaurant, index) {
+    restaurants.forEach((restaurant, index) => {
         let row = tableBody.insertRow();
 
         let nameCell = row.insertCell(0);
@@ -128,25 +129,31 @@ function displayRestaurantDetails() {
         imageCell.textContent = restaurant.image;
 
         let platesCell = row.insertCell(3);
-        let platesList = document.createElement("ul");
+        
+        if (Array.isArray(restaurant.plates) && restaurant.plates.length > 0) {
+            let platesList = document.createElement("ul");
 
-        restaurant.plates.forEach(function(plate) {
-            let plateItem = document.createElement("li");
-            plateItem.textContent = `${plate.name} - $${plate.price}`;
-            platesList.appendChild(plateItem);
-        });
+            restaurant.plates.forEach((plate, index) => {
+                let plateItem = document.createElement("li");
+                plateItem.textContent = `${plate.name} - $${plate.price}`;
+                platesList.appendChild(plateItem);
+            });
 
-        platesCell.appendChild(platesList);
+            platesCell.appendChild(platesList);
+        } else {
+            platesCell.textContent = "No plates available";
+        }
 
         let deleteCell = row.insertCell(4);
         let deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
-        deleteButton.addEventListener("click", function() {
+        deleteButton.addEventListener("click", () => {
             deleteRestaurant(index);
         });
         deleteCell.appendChild(deleteButton);
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
   let restaurantCards = document.querySelectorAll('.restaurant-card');

@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
             description.textContent = restaurant.description;
 
             let image = document.createElement("img");
-            image.src = "./assets/" + restaurant.image;
-            image.alt = restaurant.name;
+            image.src = "./assets/" + restaurant.image; // Make sure the image path is correct
+            image.alt = restaurant.name; // Assign a meaningful alt attribute
 
             card.appendChild(name);
             card.appendChild(description);
