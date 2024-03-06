@@ -12,6 +12,8 @@ function login() {
             window.location.href = "../RestaurantsWebsite/allResto.html"
         } else {
             message.innerHTML = "Incorrect Username/Password"
+            document.getElementById("username").value = ""
+            document.getElementById("password").value = ""
         };   
     } else {
         message.innerHTML = "Username does not exist. Please sign up first."
@@ -19,9 +21,9 @@ function login() {
         setTimeout(() => {
             message.innerHTML = "";
         }, 3000);
+        document.getElementById("username").value = ""
+        document.getElementById("password").value = ""
     };
-    username = "";
-    password = "";
 };
 
 function showSignUp() {
@@ -46,6 +48,8 @@ function signUp() {
             message.innerHTML = "";
         }, 3000);
         showLogin();
+        document.getElementById("username").value = ""
+        document.getElementById("password").value = ""
     } else {
         userCredentials[username] = password;
         localStorage.setItem('userCredentials', JSON.stringify(userCredentials));
