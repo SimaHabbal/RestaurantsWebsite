@@ -54,15 +54,8 @@
     border-radius: 7%;
 }
 
-@media (max-width: 650px) {
-    .left {
-        display: none;
-    }
 
-    .right {
-        right: 25%;
-        left: 25%;
-    }
+@media (max-width: 1269px) {
 
     .login-button {
         margin-left: 0;
@@ -72,3 +65,18 @@
         margin-left: 0;
     }
 }
+
+
+@media (max-width: 650px) {
+
+    .left {
+        display: none;
+    }
+
+    .right {
+        right: 25%;
+        left: 25%;
+    }
+
+}
+
