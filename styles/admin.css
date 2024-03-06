@@ -1,32 +1,40 @@
 body { 
     margin: 4rem; 
+    display: block;
+    background-repeat:no-repeat; 
+    background-size: cover;
+    background-image: url("/assets/left_bg1.png");
 } 
-/* Split the screen in half */
 .split {
     height: 100%;
     width: 50%;
     position: fixed;
     z-index: 1;
-    top: 0;
+    top: 20%;
     overflow-x: hidden;
     padding-top: 20px;
   }
   
   .left {
+
     height: 100vh;
     background-repeat:no-repeat; 
     background-size: cover;
     left: 0;
     display:block;
-    background-image: url("/assets/left_bg1.png");
 
   }
- /* background-color: rgb(30, 30, 30)
-  Control the right side */
+.whole{
+    border: 1px solid black;
+    padding-top: 10%;
+}
   .right {
+    display:block;
+    height: 100vh;
+    background-repeat:no-repeat; 
+    background-size: cover;
     right: 0;
-    color: #fff;
-    background-image: url("/assets/right_bg.png");
+
 
   }
   
@@ -39,25 +47,16 @@ body {
     text-align: center;
   }
   
-  /* Style the image inside the centered container, if needed */
-  .centered img {
-    width: 150px;
-    border-radius: 50%;
-  }
 #formContainer { 
+    margin-top:20% ;
     margin-bottom: 20px; 
 } 
-
-label { 
-    display: block; 
-    margin-top: 10px; 
-} 
+ 
 
 input, 
 textarea { 
     width: 300px; 
-    padding: 8px; 
-    margin-top: 5px; 
+    padding: 8px;  
     border: 1px solid #ccc; 
     border-radius: 4px; 
 } 
@@ -76,31 +75,32 @@ button:hover {
     background-color:rgba(30, 30, 30, 0.526); 
 } 
 
+table {
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    width: 100%;
+    table-layout: fixed; }
 
-table { 
-    
-    border-collapse: collapse; 
-    margin-bottom: 20px; 
-    width: 100%; 
-} 
-.rightTable th{
-    border: 1px solid black; 
-    padding: 8px; 
-    background-color: rgba(255, 255, 255, 0.936);
+
+.rightTable th {
+    border: 1px solid black;
+    padding: 8px;
     border-radius: 5px;
     color: black;
-
 }
-th, 
-td { 
-    border: 1px solid #dddddd00; 
-    padding: 8px; 
-    text-align: center; 
+
+th, td {
+    border: 1px solid #dddddd00;
+    padding: 8px;
+    text-align: center;
     border-radius: 5px;
     text-align: center;
-} 
+    overflow: hidden; /* Hide overflow content */
+    white-space: nowrap; /* Prevent wrapping */
+    text-overflow: ellipsis; /* Display an ellipsis (...) to represent overflow */
+}
 
-th { 
+th {
     background-color: rgb(30, 30, 30);
-    color: #fff; 
-} 
+    color: #fff;
+}
