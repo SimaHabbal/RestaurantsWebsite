@@ -1,17 +1,18 @@
-let userCredentials = {};
-const username = document.getElementById("username").value;
-const password = document.getElementById("password").value;
+let userCredentials = {"admin": "admin123"};
 let message = document.getElementById("message")
 
 function login() {
-    if (username in userCredentials ) {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username=="admin" && password=="admin123") {
+        window.location.href = "../RestaurantsWebsite/admin.html"
+    } else if (username in userCredentials ) {
         if (userCredentials[username] === password) {
-            window.location.href = "./RestaurantWebsite/allResto.html"
+            window.location.href = "../RestaurantsWebsite/allResto.html"
         } else {
             message.innerHTML = "Incorrect Username/Password"
         };   
-    } else if (username==="admin" && password==="admin123") {
-        window.location.href = "../admin.html"
     } else {
         message.innerHTML = "Username does not exist. Please sign up first."
         showSignUp()
@@ -33,6 +34,10 @@ function showLogin() {
 
 function signUp() {
     showSignUp();
+    
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
     if (username in userCredentials) {
         message.innerHTML = "Username already exists. Please login.";
         setTimeout(() => {
