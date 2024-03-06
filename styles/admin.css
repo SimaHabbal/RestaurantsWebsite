@@ -1,77 +1,29 @@
 body { 
-    margin: 4rem; 
+    margin: 10px; 
     display: block;
     background-repeat:no-repeat; 
     background-size: cover;
-    background-image: url("/assets/left_bg1.png");
+    background-image: url("/assets/pastabg.png");
 } 
-.split {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 20%;
-    overflow-x: hidden;
-    padding-top: 20px;
-  }
-  
-  .left {
-
-    height: 100vh;
-    background-repeat:no-repeat; 
-    background-size: cover;
-    left: 0;
-    display:block;
-
-  }
-.whole{
-    border: 1px solid black;
-    padding-top: 10%;
-}
-  .right {
-    display:block;
-    height: 100vh;
-    background-repeat:no-repeat; 
-    background-size: cover;
-    right: 0;
-
-
-  }
-  
-  /* If you want the content centered horizontally and vertically */
-  .centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
-#formContainer { 
-    margin-top:20% ;
-    margin-bottom: 20px; 
-} 
- 
 
 input, 
 textarea { 
     width: 300px; 
     padding: 8px;  
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
 } 
 
-button { 
-    margin: 10px; 
-    padding: 8px 16px; 
-    background-color: rgb(30, 30, 30); 
-    color: #fff; 
+.btn { 
+    margin: 20px; 
+    padding: 15px 20px; 
+    background-color: chocolate; 
+    color: white; 
     border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
+    cursor:pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 20px; 
 } 
 
-button:hover { 
+.btn:hover { 
     background-color:rgba(30, 30, 30, 0.526); 
 } 
 
@@ -81,12 +33,11 @@ table {
     width: 100%;
     table-layout: fixed; }
 
-
-.rightTable th {
-    border: 1px solid black;
+th {
     padding: 8px;
     border-radius: 5px;
-    color: black;
+    background-color: chocolate; 
+    color: white; 
 }
 
 th, td {
@@ -95,12 +46,8 @@ th, td {
     text-align: center;
     border-radius: 5px;
     text-align: center;
-    overflow: hidden; /* Hide overflow content */
-    white-space: nowrap; /* Prevent wrapping */
-    text-overflow: ellipsis; /* Display an ellipsis (...) to represent overflow */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-th {
-    background-color: rgb(30, 30, 30);
-    color: #fff;
-}

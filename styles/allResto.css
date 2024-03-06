@@ -1,4 +1,25 @@
+body{
+  text-align: center;
+}
+#restaurantCardsContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+@media screen and (max-width: 700px) {
+  #restaurantCardsContainer {
+      flex-direction: column;
+      align-items: center;
+  }
+}
 
+.searchbar {
+  padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    margin-right: 5px;
+}
 .restaurant-card h3 {
   margin-top: 0;
 }
@@ -9,16 +30,9 @@
   margin-bottom: 10px;
 }
 
-.delete-button {
-  background-color: #ff0000;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
 .restaurant-card {
-  border: 1px solid #ccc;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: white;
   border-radius: 8px;
   padding: 20px;
   margin: 10px;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./styles/login.css" />
+</head>
+<body> 
+    <div class="split left">
+        <div class="centered">
+          <img src="./assets/dish-whitebg.jpg" alt="dish with food">
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="centered">
+            <h1>WELCOME!</h1>
+            <label for="username" class="label">Username:</label>
+            <input type="text" id="username" class="input-field" placeholder="username" /> <br>
+            <label for="password" class="label">Password:</label>
+            <input type="password" id="password" class="input-field" placeholder="******" /><br>
+            <div id="buttons">
+                <button onclick="login()" class="button login-button" id="login-button">Login</button>
+                <button onclick="signUp()" class="button signup-button" id="signup-button">Sign Up</button>
+            </div>
+            <div id="message"></div>
+        </div>
+    </div>
+    <script  src="./scripts/admin.js"></script>
+    <script src="./scripts/login.js"></script>
+</body>
+</html>

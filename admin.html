@@ -17,13 +17,11 @@
 </head>
 <body> <header>
     <ul class="nav-links">
-        <li><a href="#">About Us</a></li>
-        <li class="center"><a href="#">Contact Us</a></li>
-        <li class="upward"><a href="#">Login</a></li>
+        <li><a href="/allResto.html">Restaurants</a></li>
+        <li class="center"><a href="/menu.html">Menu</a></li>
+        <li class="upward"><a href="login.html">Login</a></li>
       </ul></header>
-      <div class="whole">
-       <div class="split left">
-        <div class="centered">
+
             <h2>Users</h2> 
             <div id="formContainer"> 
                 <label for="uNameInput">Name:</label> 
@@ -32,7 +30,7 @@
                 <input type="email" id="uEmailInput" placeholder="Enter the email" required> 
                 <label for="uPasswordInput">Password:</label> 
                 <input type="text" id="uPasswordInput" placeholder="Enter the password" required> 
-                <button onclick="addUser()">Add</button> 
+                <button class="btn" onclick="addUser()">Add</button> 
             </div> 
 
             <table class="leftTable" id="leftTable"> 
@@ -41,18 +39,12 @@
                         <th>Name</th> 
                         <th>Email</th> 
                         <th>Password</th> 
-                        <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody id="userList">
                 </tbody>
             </table> 
-        </div>
-    </div>
-      
-    <div class="split right">
-        <div class="centered">
             <div id="restaurantForm">
                 <h2>Add a Restaurant</h2>
                 <form id="addRestaurantForm">
@@ -71,8 +63,8 @@
                             <input type="number" name="platePrice" min="0" required>
                         </div>
                     </div>
-                    <button type="button" onclick="addPlate()">Add Plate</button><br><br>
-                    <button type="button" onclick="addRestaurant()">Add Restaurant</button>
+                    <button  class="btn" type="button" onclick="addPlate()">Add Plate</button><br><br>
+                    <button class="btn" type="button" onclick="addRestaurant()">Add Restaurant</button>
                 </form>
             </div>
         
@@ -85,12 +77,13 @@
                             <th>Description</th>
                             <th>Image</th>
                             <th>Plates</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody id="restaurantTableBody">
                     </tbody>
                 </table>
-            </div></div></div></div>
+
 
     <script src="./scripts/admin.js"></script>
 </body>

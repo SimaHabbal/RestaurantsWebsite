@@ -19,7 +19,6 @@ function addUser() {
     displayUsers();
 }
 
-
 function deleteUser(index) { 
     users.splice(index, 1);
     localStorage.setItem('users', JSON.stringify(users));
@@ -39,7 +38,6 @@ function displayUsers() {
         deleteCell.innerHTML = "<span class='close' onclick='deleteUser(" + index + ")'>&times;</span>";    });
 }
 
-
 function clearInputs() { 
     document.getElementById("uNameInput").value = ""; 
     document.getElementById("uEmailInput").value = ""; 
@@ -49,7 +47,6 @@ function clearInputs() {
 displayUsers();
 
 
-// Call function to load data from localStorage when the page loads
 window.onload = function() {
   loadDataFromLocalStorage();
   displayRestaurantDetails();
@@ -67,20 +64,17 @@ function addPlate() {
     platesDiv.appendChild(plateDiv);
 }
 
-// Function to add a new restaurant
 function addRestaurant() {
     let restaurantName = document.getElementById("restaurantName").value;
     let restaurantDescription = document.getElementById("restaurantDescription").value;
     let restaurantImage = document.getElementById("restaurantImage").value;
     let plates = [];
 
-    // Get plate details
     let plateDivs = document.querySelectorAll(".plate");
     plateDivs.forEach(function(plateDiv) {
         let plateName = plateDiv.querySelector('input[name="plateName"]').value;
         let platePrice = plateDiv.querySelector('input[name="platePrice"]').value;
 
-        // Create plate object and add to plates array
         let plate = {
             name: plateName,
             price: platePrice
@@ -88,7 +82,6 @@ function addRestaurant() {
         plates.push(plate);
     });
 
-    // Simple validation
     if (restaurantName === "" || restaurantDescription === "" || restaurantImage === "" || plates.length === 0) {
         alert("Please fill in all fields.");
         return;
@@ -101,21 +94,28 @@ function addRestaurant() {
         plates: plates
     };
 
-    restaurants.push(restaurant); // Add restaurant to the array
-    displayRestaurantDetails(); // Call function to display restaurant details
-    saveDataToLocalStorage(); // Save data to localStorage
+    restaurants.push(restaurant); 
+    displayRestaurantDetails();
+    saveDataToLocalStorage();
 
     console.log("New restaurant added: ", restaurant);
 
     document.getElementById("addRestaurantForm").reset();
 }
 
-// Function to display restaurant details in a table
+function deleteRestaurant(index) {
+    restaurants.splice(index, 1);
+    
+    saveDataToLocalStorage();
+
+    displayRestaurantDetails();
+}
+
 function displayRestaurantDetails() {
     let tableBody = document.getElementById("restaurantTableBody");
-    tableBody.innerHTML = ""; // Clear existing table rows
+    tableBody.innerHTML = "";
 
-    restaurants.forEach(function(restaurant) {
+    restaurants.forEach(function(restaurant, index) {
         let row = tableBody.insertRow();
 
         let nameCell = row.insertCell(0);
@@ -137,31 +137,32 @@ function displayRestaurantDetails() {
         });
 
         platesCell.appendChild(platesList);
+
+        let deleteCell = row.insertCell(4);
+        let deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        deleteButton.addEventListener("click", function() {
+            deleteRestaurant(index);
+        });
+        deleteCell.appendChild(deleteButton);
     });
 }
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Get all restaurant cards
   let restaurantCards = document.querySelectorAll('.restaurant-card');
 
-  // Attach click event listener to each restaurant card
   restaurantCards.forEach(function(card) {
       card.addEventListener('click', function(event) {
-          // Extract information about the restaurant from the card
           let restaurantName = card.querySelector('h2').textContent;
           let restaurantDescription = card.querySelector('p').textContent;
-          // Add more information as needed
 
-          // Construct the URL for the menu page with parameters
           let menuURL = `menu.html?name=${encodeURIComponent(restaurantName)}&description=${encodeURIComponent(restaurantDescription)}`;
-          // Add more parameters as needed
-
-          // Redirect the user to the menu page
+ 
           window.location.href = menuURL;
       });
   });
 });
 
-// Function to save data to localStorage
 function saveDataToLocalStorage() {
     localStorage.setItem('restaurants', JSON.stringify(restaurants));
 }
