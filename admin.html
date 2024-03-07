@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/admin.css" />
-    <link rel="stylesheet" href="./styles/common.css" />
     <title>Admin</title>
 
 <head> 
@@ -14,84 +13,95 @@
 	<style> 
 
 	</style> 
-</head>
-<body> <header>
-    <ul class="nav-links">
-        <li><a href="#">About Us</a></li>
-        <li class="center"><a href="#">Contact Us</a></li>
-        <li class="upward"><a href="#">Login</a></li>
-      </ul></header>
-      <div class="whole">
-       <div class="split left">
+</head> 
+<body> 
+    <div class="split left">
         <div class="centered">
-            <h2>Users</h2> 
-            <div id="formContainer"> 
-                <label for="uNameInput">Name:</label> 
-                <input type="text" id="uNameInput" placeholder="Enter the name" required> 
-                <label for="uEmailInput">Email I'd:</label> 
-                <input type="email" id="uEmailInput" placeholder="Enter the email" required> 
-                <label for="uPasswordInput">Password:</label> 
-                <input type="text" id="uPasswordInput" placeholder="Enter the password" required> 
-                <button onclick="addUser()">Add</button> 
-            </div> 
 
-            <table class="leftTable" id="leftTable"> 
-                <thead>
-                    <tr> 
-                        <th>Name</th> 
-                        <th>Email</th> 
-                        <th>Password</th> 
-                        <th>Edit</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody id="userList">
-                </tbody>
-            </table> 
-        </div>
-    </div>
-      
-    <div class="split right">
-        <div class="centered">
-            <div id="restaurantForm">
-                <h2>Add a Restaurant</h2>
-                <form id="addRestaurantForm">
-                    <label for="restaurantName">Restaurant Name:</label><br>
-                    <input type="text" id="restaurantName" name="restaurantName" required><br>
-                    <label for="restaurantDescription">Description:</label><br>
-                    <textarea id="restaurantDescription" name="restaurantDescription" required></textarea><br>
-                    <label for="restaurantImage">Choose Image:</label><br>
-                    <input type="file" id="restaurantImage" name="restaurantImage" accept="image/*" required><br><br>
-                    <h3>Add Plates</h3>
-                    <div id="plates">
-                        <div class="plate">
-                            <label for="plateName">Plate Name:</label>
-                            <input type="text" name="plateName" required>
-                            <label for="platePrice">Price:</label>
-                            <input type="number" name="platePrice" min="0" required>
-                        </div>
-                    </div>
-                    <button type="button" onclick="addPlate()">Add Plate</button><br><br>
-                    <button type="button" onclick="addRestaurant()">Add Restaurant</button>
-                </form>
-            </div>
+        <h2>Users</h2> 
+    
+        <div id="formContainer"> 
+            <label for="uNameInput"> 
+                Name: 
+            </label> 
+            <input type="text"
+                id="uNameInput"
+                placeholder="Enter the name" required> 
+            <label for="uEmailInput"> 
+                Email I'd: 
+            </label> 
+            <input type="email"
+                id="uEmailInput"
+                placeholder="Enter the email" required> 
+            <label for="uPasswordInput"> 
+                Password: 
+            </label> 
+            <input type="text"
+                id="uPasswordInput"
+                placeholder="Enter the password" required> 
+ 
+            <button onclick="addUser()"> 
+                Add 
+            </button> 
+        </div> 
+        <table class="leftTable" id="leftTable"> 
+            <thead>
+                <tr> 
+                    <th>Name</th> 
+                    <th>Email</th> 
+                    <th>Password</th> 
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="userList">
+            </tbody>
+        </table> 
         
-            <h2>Restaurant Details</h2>
-            <div id="restaurantDetails">
-                <table id="restaurantTable">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Image</th>
-                            <th>Plates</th>
-                        </tr>
-                    </thead>
-                    <tbody id="restaurantTableBody">
-                    </tbody>
-                </table>
-            </div></div></div></div>
+        </div>
+      </div>
+      
+      <div class="split right">
+        <div class="centered">
+        <h2>Restaurants</h2> 
+    
+        <div id="formContainer"> 
+            <label for="rNameInput"> 
+                Name: 
+            </label> 
+            <input type="text"
+                id="rNameInput"
+                placeholder="Enter your name"> 
+            <label for="rImageInput"> 
+                Image Url: 
+            </label> 
+            <input type="url"
+                id="rImageInput"
+                placeholder="Enter the Image url"> 
+            <label for="rDesInput"> 
+                Description: 
+            </label> 
+            <input type="text"
+                id="rDesInput"
+                placeholder="Enter the description"> 
 
-    <script src="./scripts/admin.js"></script>
+            <button onclick="addResto()"> 
+                Add 
+            </button> 
+        </div> 
+        <table class="rightTable" id="rightTable"> 
+            <thead>
+                <tr> 
+                    <th>Id</th>
+                    <th>Name</th> 
+                    <th>Image Url</th> 
+                    <th>Description</th> 
+                    <th>Delete</th>
+                </tr> 
+            </thead>
+            <tbody id="restoList">
+            </tbody>
+        </div>
+      </div>
+      <script src="./scripts/admin.js"></script>
 </body>
 </html>
