@@ -1,47 +1,29 @@
 let restaurants = JSON.parse(localStorage.getItem("restaurants")) || [];
 
+
 function displayRestaurantCards() {
-  let container = document.getElementById("restaurantCardsContainer");
+  let aboutRestaurant = document.getElementsByClassName("image-container");
   let detailsContainer = document.getElementById("cards-details");
 
-    restaurants.forEach( (restaurant)=> {
+  let about = imageContainer.createElement("div");
+
+  about.innerHTML = `<!-- <h6 class="text-white">WELCOME TO ${restaurants.name}</h6>
+                                <h1 class="display-1 my-3 fw-bold text-white">${restaurants.slogan}</h1>
+                                <a href="#" class="btn btn-brand">Reservation</a> -->`;
+
+  restaurants.plates.forEach((plate) => {
     let card = document.createElement("div");
-    card.innerHTML=`    <div class="col-lg-3 col-sm-6">
+    card.innerHTML = `    <div class="col-lg-3 col-sm-6">
                                 <div class="menu-item bg-white shadow-on-hover">
-                                    <img src="${item.image}" alt="">
+                                    <img src="${plate.image}" alt="">
                                     <div class="menu-item-content p-4">
-                                        <h5 class="mt-1 mb-2"><a href="#">${item.name}</a></h5>
-                                        <p class="small">${item.description}</p>
+                                        <h5 class="mt-1 mb-2"><a href="#">${plate.name}</a></h5>
+                                        <p class="small">${plate.description}</p>
                                     </div>
                                 </div>
                             </div>
-    `
-        ;
+    `;
 
-
-    container.appendChild(card);
+    detailsContainer.appendChild(card);
   });
 }
-
-function displayRestaurantDetails(restaurant, detailsContainer) {
-  detailsContainer.innerHTML = "";
-
-  let detailsName = document.createElement("h2");
-  detailsName.textContent = restaurant.name;
-
-  let detailsDescription = document.createElement("p");
-  detailsDescription.textContent = restaurant.description;
-
-  let detailsImage = document.createElement("img");
-  detailsImage.src = "./assets/" + restaurant.image;
-  detailsImage.alt = restaurant.name;
-
-  detailsContainer.appendChild(detailsName);
-  detailsContainer.appendChild(detailsDescription);
-  detailsContainer.appendChild(detailsImage);
-
-}
-
-window.onload = function () {
-  displayRestaurantCards();
-};
