@@ -140,22 +140,15 @@ function displayRestaurantDetails() {
     });
 }
 document.addEventListener('DOMContentLoaded', function() {
-  // Get all restaurant cards
   let restaurantCards = document.querySelectorAll('.restaurant-card');
 
-  // Attach click event listener to each restaurant card
   restaurantCards.forEach(function(card) {
       card.addEventListener('click', function(event) {
-          // Extract information about the restaurant from the card
           let restaurantName = card.querySelector('h2').textContent;
           let restaurantDescription = card.querySelector('p').textContent;
-          // Add more information as needed
 
-          // Construct the URL for the menu page with parameters
           let menuURL = `menu.html?name=${encodeURIComponent(restaurantName)}&description=${encodeURIComponent(restaurantDescription)}`;
-          // Add more parameters as needed
 
-          // Redirect the user to the menu page
           window.location.href = menuURL;
       });
   });

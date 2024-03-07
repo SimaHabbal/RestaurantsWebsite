@@ -1,35 +1,47 @@
-// Load data from localStorage if available
-let restaurants = JSON.parse(localStorage.getItem('restaurants')) || [];
+let restaurants = JSON.parse(localStorage.getItem("restaurants")) || [];
 
-// Function to display restaurant cards
 function displayRestaurantCards() {
-    let container = document.getElementById("restaurantCardsContainer");
+  let container = document.getElementById("restaurantCardsContainer");
+  let detailsContainer = document.getElementById("cards-details");
 
-    restaurants.forEach(function(restaurant) {
-        let card = document.createElement("div");
-        card.classList.add("restaurant-card");
+    restaurants.forEach( (restaurant)=> {
+    let card = document.createElement("div");
+    card.innerHTML=`    <div class="col-lg-3 col-sm-6">
+                                <div class="menu-item bg-white shadow-on-hover">
+                                    <img src="${item.image}" alt="">
+                                    <div class="menu-item-content p-4">
+                                        <h5 class="mt-1 mb-2"><a href="#">${item.name}</a></h5>
+                                        <p class="small">${item.description}</p>
+                                    </div>
+                                </div>
+                            </div>
+    `
+        ;
 
-        let name = document.createElement("h2");
-        name.textContent = restaurant.name;
 
-        let description = document.createElement("p");
-        description.textContent = restaurant.description;
-
-        let image = document.createElement("img");
-        image.src = "./assets/" + restaurant.image; // Construct the image path dynamically
-        image.alt = restaurant.name; // Use the restaurant name as alt text
-
-        card.appendChild(name);
-        card.appendChild(description);
-        card.appendChild(image);
-        container.appendChild(card);
-    });
+    container.appendChild(card);
+  });
 }
 
+function displayRestaurantDetails(restaurant, detailsContainer) {
+  detailsContainer.innerHTML = "";
 
+  let detailsName = document.createElement("h2");
+  detailsName.textContent = restaurant.name;
 
+  let detailsDescription = document.createElement("p");
+  detailsDescription.textContent = restaurant.description;
 
-// Call function to display restaurant cards when the page loads
-window.onload = function() {
-    displayRestaurantCards();
+  let detailsImage = document.createElement("img");
+  detailsImage.src = "./assets/" + restaurant.image;
+  detailsImage.alt = restaurant.name;
+
+  detailsContainer.appendChild(detailsName);
+  detailsContainer.appendChild(detailsDescription);
+  detailsContainer.appendChild(detailsImage);
+
+}
+
+window.onload = function () {
+  displayRestaurantCards();
 };
